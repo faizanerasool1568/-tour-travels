@@ -1,0 +1,3 @@
+<div class="ribbon" th:if="${ribbon !=null and ribbon == true}" th:classappend="${profile != null ? profile : ''}">
+    <a href="javascript:void(0);" th:if="${profile != null}" th:text="${profile}">SIT</a>
+</div>

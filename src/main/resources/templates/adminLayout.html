@@ -1,0 +1,19 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org"
+	layout:decorate="/layout/bodyLayout">
+<body>
+	<section layout:fragment="content">
+		<h2 class="module-title">
+			<span th:text="${pageTitle}" th:remove="tag">Module Title</span>
+
+		</h2>
+
+		<div layout:fragment="list-of-items" th:remove="tag">
+			<!-- LIST OF ITEMS -->
+		</div>
+
+	</section>
+
+</body>
+</html>

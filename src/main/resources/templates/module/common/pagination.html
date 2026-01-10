@@ -1,0 +1,17 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sd="http://www.thymeleaf.org/spring-datadialect">
+<body>
+	<div class="row" th:fragment="pagination">
+		<div class="col-sm-8">
+			<nav class="pull-right"
+				th:if="${page != null and (page.totalPages > 1)}">
+				<ul class="pagination pagination-sm" sd:pagination="full"
+					id="pagination">spring data dialect will include content in
+					this
+				</ul>
+			</nav>
+		</div>
+	</div>
+</body>
+</html>

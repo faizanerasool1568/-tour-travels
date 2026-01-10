@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<div th:replace="/layout/head-section/error-head"></div>
+<body>
+	<div class="error_container">
+		<div class="row">
+			<div class="col-xs-12">
+				<form th:action="@{/login}" method="get">
+					<div class="error_content" layout:fragment="content">
+						<!-- Content comes here -->
+						<!-- Content comes here -->
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div th:replace="/layout/body-section/error-script"></div>
+	<th:block layout:fragment="script">
+
+	</th:block>
+</body>
+</html>
+>

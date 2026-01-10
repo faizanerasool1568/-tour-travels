@@ -1,0 +1,14 @@
+<!--Body Wrapper Starts Here-->
+<div class="bodywrapper" th:fragment="body">
+	<!-- Actual content wraping area -->
+	<div class="contentwrap">
+		<!-- Sub Navigation section-->
+		<div th:replace="/layout/leftMenu/leftmenu :: leftmenu">
+		
+		</div>
+		<th:block layout:fragment="content">
+			<h1>hi ..... Static content for prototyping purposes only</h1>
+		</th:block>  
+	</div>
+</div>
+<!--Body Wrapper Ends Here-->

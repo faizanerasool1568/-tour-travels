@@ -1,0 +1,1046 @@
+html {
+direction: ltr;
+}
+body {
+	padding: 0px;
+	margin: 0px;
+}
+footer {
+}
+/******************wrappers****************/
+.appwrapper {
+}
+.appheader {
+	position: absolute;
+	width: 100%;
+	height: 50px;
+	z-index: 9;
+	transition: all 0.4s ease 0s;
+}
+.bodywrapper {
+	width: 100%;
+	position: absolute;
+	top: 50px;
+	bottom: 30px;
+	overflow: hidden;
+	background: #f2f2f2;
+}
+.contentwrap{height:100%;padding-left:200px;position:relative;transition: all 0.4s ease 0s; }
+.contentwrap .iframeholder{width:100%;height:100%;}
+.mod_touchevents .contentwrap .iframeholder{ -webkit-overflow-scrolling: touch; overflow-y: scroll;}
+.content {
+}
+.leftnav {
+	float: left;
+	left: 0px;
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+	position: absolute;
+	transition: all 0.4s ease 0s;
+	z-index: 2;
+    width:200px;
+}
+.footerwrap {
+	bottom: 0;
+	display: block;
+	height: 30px;
+	position: absolute;
+	width: 100%;
+}
+
+/***************************** At portrait view************/
+@media (max-width: 840px) {
+.appheader {
+	transition: all 0.4s ease 0s;
+}
+.leftnav {
+	left: -200px;
+}
+.mnuactive .leftnav {
+	left: 0px;
+	z-index: 2;
+}
+.mnuactive .contentwrap.partview .leftnav {
+	margin-left: 60px;
+	transition: all 0.4s ease 0s;
+}
+.contentwrap.partview {
+	padding-left: 0px;
+	transition: all 0.4s ease 0s;
+}
+.contentwrap {
+	padding-left: 0;
+}
+.content {
+	z-index: 0;
+}
+.mnuactive .nav-overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+}
+
+@media (max-width: 670px) {
+.bodywrapper {
+	bottom: 0px;
+}
+}
+/************* key frame animation *******************/
+.animated.flip, .animated.flipInX, .animated.flipInY, .animated.flipOutX, .animated.flipOutY {
+	backface-visibility: visible!important
+}
+.animated {
+	animation-duration: 1s;
+	animation-fill-mode: both
+}
+.animated.fast {
+	animation-duration: .5s
+}
+@keyframes flash {
+0%, 100%, 50% {
+opacity:1
+}
+25%, 75% {
+opacity:0
+}
+}
+.animated.flash {
+	animation-name: flash
+}
+@keyframes shake {
+0%, 100% {
+transform:translateX(0)
+}
+10%, 30%, 50%, 70%, 90% {
+transform:translateX(-10px)
+}
+20%, 40%, 60%, 80% {
+transform:translateX(10px)
+}
+}
+.animated.shake {
+	animation-name: shake
+}
+@keyframes bounce {
+0%, 100%, 20%, 50%, 80% {
+transform:translateY(0)
+}
+40% {
+transform:translateY(-30px)
+}
+60% {
+transform:translateY(-15px)
+}
+}
+.animated.bounce {
+	animation-name: bounce
+}
+@keyframes tada {
+0% {
+transform:scale(1)
+}
+10%, 20% {
+transform:scale(.9) rotate(-3deg)
+}
+30%, 50%, 70%, 90% {
+transform:scale(1.1) rotate(3deg)
+}
+40%, 60%, 80% {
+transform:scale(1.1) rotate(-3deg)
+}
+100% {
+transform:scale(1) rotate(0)
+}
+}
+.animated.tada {
+	animation-name: tada
+}
+@keyframes swing {
+20% {
+transform:rotate(15deg)
+}
+40% {
+transform:rotate(-10deg)
+}
+60% {
+transform:rotate(5deg)
+}
+80% {
+transform:rotate(-5deg)
+}
+100% {
+transform:rotate(0)
+}
+}
+.animated.swing {
+	animation-name: swing;
+	transform-origin: center top 0
+}
+@keyframes wobble {
+0%, 100% {
+transform:translateX(0)
+}
+15% {
+transform:translateX(-25%) rotate(-5deg)
+}
+30% {
+transform:translateX(20%) rotate(3deg)
+}
+45% {
+transform:translateX(-15%) rotate(-3deg)
+}
+60% {
+transform:translateX(10%) rotate(2deg)
+}
+75% {
+transform:translateX(-5%) rotate(-1deg)
+}
+}
+.animated.wobble {
+	animation-name: wobble
+}
+@keyframes pulse {
+0%, 100% {
+transform:scale(1)
+}
+50% {
+transform:scale(1.1)
+}
+}
+.animated.pulse {
+	animation-name: pulse
+}
+@keyframes flip {
+0% {
+animation-timing-function:ease-out;
+transform:perspective(400px) translateZ(0) rotateY(0) scale(1)
+}
+40% {
+animation-timing-function:ease-out;
+transform:perspective(400px) translateZ(150px) rotateY(170deg) scale(1)
+}
+50% {
+animation-timing-function:ease-in;
+transform:perspective(400px) translateZ(150px) rotateY(190deg) scale(1)
+}
+80% {
+animation-timing-function:ease-in;
+transform:perspective(400px) translateZ(0) rotateY(360deg) scale(.95)
+}
+100% {
+animation-timing-function:ease-in;
+transform:perspective(400px) translateZ(0) rotateY(360deg) scale(1)
+}
+}
+.animated.flip {
+	animation-name: flip
+}
+@keyframes flipInX {
+0% {
+opacity:0;
+transform:perspective(400px) rotateX(90deg)
+}
+40% {
+transform:perspective(400px) rotateX(-10deg)
+}
+70% {
+transform:perspective(400px) rotateX(10deg)
+}
+100% {
+opacity:1;
+transform:perspective(400px) rotateX(0)
+}
+}
+.animated.flipInX {
+	animation-name: flipInX
+}
+@keyframes flipOutX {
+0% {
+opacity:1;
+transform:perspective(400px) rotateX(0)
+}
+100% {
+opacity:0;
+transform:perspective(400px) rotateX(90deg)
+}
+}
+.animated.flipOutX {
+	animation-name: flipOutX
+}
+@keyframes flipInY {
+0% {
+opacity:0;
+transform:perspective(400px) rotateY(90deg)
+}
+40% {
+transform:perspective(400px) rotateY(-10deg)
+}
+70% {
+transform:perspective(400px) rotateY(10deg)
+}
+100% {
+opacity:1;
+transform:perspective(400px) rotateY(0)
+}
+}
+.animated.flipInY {
+	animation-name: flipInY
+}
+@keyframes flipOutY {
+0% {
+opacity:1;
+transform:perspective(400px) rotateY(0)
+}
+100% {
+opacity:0;
+transform:perspective(400px) rotateY(90deg)
+}
+}
+.animated.flipOutY {
+	animation-name: flipOutY
+}
+@keyframes fadeIn {
+0% {
+opacity:0
+}
+100% {
+opacity:1
+}
+}
+.animated.fadeIn {
+	animation-name: fadeIn
+}
+@keyframes fadeInUp {
+0% {
+opacity:0;
+transform:translateY(20px)
+}
+100% {
+opacity:1;
+transform:translateY(0)
+}
+}
+.animated.fadeInUp {
+	animation-name: fadeInUp
+}
+@keyframes fadeInDown {
+0% {
+opacity:0;
+transform:translateY(-20px)
+}
+100% {
+opacity:1;
+transform:translateY(0)
+}
+}
+.animated.fadeInDown {
+	animation-name: fadeInDown
+}
+@keyframes fadeInLeft {
+0% {
+opacity:0;
+transform:translateX(-20px)
+}
+100% {
+opacity:1;
+transform:translateX(0)
+}
+}
+.animated.fadeInLeft {
+	animation-name: fadeInLeft
+}
+@keyframes fadeInRight {
+0% {
+opacity:0;
+transform:translateX(20px)
+}
+100% {
+opacity:1;
+transform:translateX(0)
+}
+}
+.animated.fadeInRight {
+	animation-name: fadeInRight
+}
+@keyframes fadeInUpBig {
+0% {
+opacity:0;
+transform:translateY(2000px)
+}
+100% {
+opacity:1;
+transform:translateY(0)
+}
+}
+.animated.fadeInUpBig {
+	animation-name: fadeInUpBig
+}
+@keyframes fadeInDownBig {
+0% {
+opacity:0;
+transform:translateY(-2000px)
+}
+100% {
+opacity:1;
+transform:translateY(0)
+}
+}
+.animated.fadeInDownBig {
+	animation-name: fadeInDownBig
+}
+@keyframes fadeInLeftBig {
+0% {
+opacity:0;
+transform:translateX(-2000px)
+}
+100% {
+opacity:1;
+transform:translateX(0)
+}
+}
+.animated.fadeInLeftBig {
+	animation-name: fadeInLeftBig
+}
+@keyframes fadeInRightBig {
+0% {
+opacity:0;
+transform:translateX(2000px)
+}
+100% {
+opacity:1;
+transform:translateX(0)
+}
+}
+.animated.fadeInRightBig {
+	animation-name: fadeInRightBig
+}
+@keyframes fadeOut {
+0% {
+opacity:1
+}
+100% {
+opacity:0
+}
+}
+.animated.fadeOut {
+	animation-name: fadeOut
+}
+@keyframes fadeOutUp {
+0% {
+opacity:1;
+transform:translateY(0)
+}
+100% {
+opacity:0;
+transform:translateY(-20px)
+}
+}
+.animated.fadeOutUp {
+	animation-name: fadeOutUp
+}
+@keyframes fadeOutDown {
+0% {
+opacity:1;
+transform:translateY(0)
+}
+100% {
+opacity:0;
+transform:translateY(20px)
+}
+}
+.animated.fadeOutDown {
+	animation-name: fadeOutDown
+}
+@keyframes fadeOutLeft {
+0% {
+opacity:1;
+transform:translateX(0)
+}
+100% {
+opacity:0;
+transform:translateX(-20px)
+}
+}
+.animated.fadeOutLeft {
+	animation-name: fadeOutLeft
+}
+@keyframes fadeOutRight {
+0% {
+opacity:1;
+transform:translateX(0)
+}
+100% {
+opacity:0;
+transform:translateX(20px)
+}
+}
+.animated.fadeOutRight {
+	animation-name: fadeOutRight
+}
+@keyframes fadeOutUpBig {
+0% {
+opacity:1;
+transform:translateY(0)
+}
+100% {
+opacity:0;
+transform:translateY(-2000px)
+}
+}
+.animated.fadeOutUpBig {
+	animation-name: fadeOutUpBig
+}
+@keyframes fadeOutDownBig {
+0% {
+opacity:1;
+transform:translateY(0)
+}
+100% {
+opacity:0;
+transform:translateY(2000px)
+}
+}
+.animated.fadeOutDownBig {
+	animation-name: fadeOutDownBig
+}
+@keyframes fadeOutLeftBig {
+0% {
+opacity:1;
+transform:translateX(0)
+}
+100% {
+opacity:0;
+transform:translateX(-2000px)
+}
+}
+.animated.fadeOutLeftBig {
+	animation-name: fadeOutLeftBig
+}
+@keyframes fadeOutRightBig {
+0% {
+opacity:1;
+transform:translateX(0)
+}
+100% {
+opacity:0;
+transform:translateX(2000px)
+}
+}
+.animated.fadeOutRightBig {
+	animation-name: fadeOutRightBig
+}
+@keyframes bounceIn {
+0% {
+opacity:0;
+transform:scale(.3)
+}
+50% {
+opacity:1;
+transform:scale(1.05)
+}
+70% {
+transform:scale(.9)
+}
+100% {
+transform:scale(1)
+}
+}
+@keyframes slideInDown {
+0% {
+opacity:0;
+transform:translateY(-2000px)
+}
+100% {
+transform:translateY(0)
+}
+}
+.slideInDown {
+	animation-name: slideInDown
+}
+@keyframes slideInLeft {
+0% {
+opacity:0;
+transform:translateX(-2000px)
+}
+100% {
+transform:translateX(0)
+}
+}
+.slideInLeft {
+	animation-name: slideInLeft
+}
+@keyframes slideInRight {
+0% {
+opacity:0;
+transform:translateX(2000px)
+}
+100% {
+transform:translateX(0)
+}
+}
+.slideInRight {
+	animation-name: slideInRight
+}
+@keyframes slideOutLeft {
+0% {
+transform:translateX(0)
+}
+100% {
+opacity:0;
+transform:translateX(-2000px)
+}
+}
+.slideOutLeft {
+	animation-name: slideOutLeft
+}
+@keyframes slideOutRight {
+0% {
+transform:translateX(0)
+}
+100% {
+opacity:0;
+transform:translateX(2000px)
+}
+}
+.slideOutRight {
+	animation-name: slideOutRight
+}
+@keyframes slideOutUp {
+0% {
+transform:translateY(0)
+}
+100% {
+opacity:0;
+transform:translateY(-2000px)
+}
+}
+.slideOutUp {
+	animation-name: slideOutUp
+}
+.animated.bounceIn {
+	animation-name: bounceIn
+}
+@keyframes bounceInUp {
+0% {
+opacity:0;
+transform:translateY(2000px)
+}
+60% {
+opacity:1;
+transform:translateY(-30px)
+}
+80% {
+transform:translateY(10px)
+}
+100% {
+transform:translateY(0)
+}
+}
+.animated.bounceInUp {
+	animation-name: bounceInUp
+}
+@keyframes bounceInDown {
+0% {
+opacity:0;
+transform:translateY(-2000px)
+}
+60% {
+opacity:1;
+transform:translateY(30px)
+}
+80% {
+transform:translateY(-10px)
+}
+100% {
+transform:translateY(0)
+}
+}
+.animated.bounceInDown {
+	animation-name: bounceInDown
+}
+@keyframes bounceInLeft {
+0% {
+opacity:0;
+transform:translateX(-2000px)
+}
+60% {
+opacity:1;
+transform:translateX(30px)
+}
+80% {
+transform:translateX(-10px)
+}
+100% {
+transform:translateX(0)
+}
+}
+.animated.bounceInLeft {
+	animation-name: bounceInLeft
+}
+@keyframes bounceInRight {
+0% {
+opacity:0;
+transform:translateX(2000px)
+}
+60% {
+opacity:1;
+transform:translateX(-30px)
+}
+80% {
+transform:translateX(10px)
+}
+100% {
+transform:translateX(0)
+}
+}
+.animated.bounceInRight {
+	animation-name: bounceInRight
+}
+@keyframes bounceOut {
+0% {
+transform:scale(1)
+}
+25% {
+transform:scale(.95)
+}
+50% {
+opacity:1;
+transform:scale(1.1)
+}
+100% {
+opacity:0;
+transform:scale(.3)
+}
+}
+.animated.bounceOut {
+	animation-name: bounceOut
+}
+@keyframes bounceOutUp {
+0% {
+transform:translateY(0)
+}
+20% {
+opacity:1;
+transform:translateY(20px)
+}
+100% {
+opacity:0;
+transform:translateY(-2000px)
+}
+}
+.animated.bounceOutUp {
+	animation-name: bounceOutUp
+}
+@keyframes bounceOutDown {
+0% {
+transform:translateY(0)
+}
+20% {
+opacity:1;
+transform:translateY(-20px)
+}
+100% {
+opacity:0;
+transform:translateY(2000px)
+}
+}
+.animated.bounceOutDown {
+	animation-name: bounceOutDown
+}
+@keyframes bounceOutLeft {
+0% {
+transform:translateX(0)
+}
+20% {
+opacity:1;
+transform:translateX(20px)
+}
+100% {
+opacity:0;
+transform:translateX(-2000px)
+}
+}
+.animated.bounceOutLeft {
+	animation-name: bounceOutLeft
+}
+@keyframes bounceOutRight {
+0% {
+transform:translateX(0)
+}
+20% {
+opacity:1;
+transform:translateX(-20px)
+}
+100% {
+opacity:0;
+transform:translateX(2000px)
+}
+}
+.animated.bounceOutRight {
+	animation-name: bounceOutRight
+}
+@keyframes rotateIn {
+0% {
+opacity:0;
+transform:rotate(-200deg);
+transform-origin:center center 0
+}
+100% {
+opacity:1;
+transform:rotate(0);
+transform-origin:center center 0
+}
+}
+.animated.rotateIn {
+	animation-name: rotateIn
+}
+@keyframes rotateInUpLeft {
+0% {
+opacity:0;
+transform:rotate(90deg);
+transform-origin:left bottom 0
+}
+100% {
+opacity:1;
+transform:rotate(0);
+transform-origin:left bottom 0
+}
+}
+.animated.rotateInUpLeft {
+	animation-name: rotateInUpLeft
+}
+@keyframes rotateInDownLeft {
+0% {
+opacity:0;
+transform:rotate(-90deg);
+transform-origin:left bottom 0
+}
+100% {
+opacity:1;
+transform:rotate(0);
+transform-origin:left bottom 0
+}
+}
+.animated.rotateInDownLeft {
+	animation-name: rotateInDownLeft
+}
+@keyframes rotateInUpRight {
+0% {
+opacity:0;
+transform:rotate(-90deg);
+transform-origin:right bottom 0
+}
+100% {
+opacity:1;
+transform:rotate(0);
+transform-origin:right bottom 0
+}
+}
+.animated.rotateInUpRight {
+	animation-name: rotateInUpRight
+}
+@keyframes rotateInDownRight {
+0% {
+opacity:0;
+transform:rotate(90deg);
+transform-origin:right bottom 0
+}
+100% {
+opacity:1;
+transform:rotate(0);
+transform-origin:right bottom 0
+}
+}
+.animated.rotateInDownRight {
+	animation-name: rotateInDownRight
+}
+@keyframes rotateOut {
+0% {
+opacity:1;
+transform:rotate(0);
+transform-origin:center center 0
+}
+100% {
+opacity:0;
+transform:rotate(200deg);
+transform-origin:center center 0
+}
+}
+.animated.rotateOut {
+	animation-name: rotateOut
+}
+@keyframes rotateOutUpLeft {
+0% {
+opacity:1;
+transform:rotate(0);
+transform-origin:left bottom 0
+}
+100% {
+opacity:0;
+transform:rotate(-90deg);
+transform-origin:left bottom 0
+}
+}
+.animated.rotateOutUpLeft {
+	animation-name: rotateOutUpLeft
+}
+@keyframes rotateOutDownLeft {
+0% {
+opacity:1;
+transform:rotate(0);
+transform-origin:left bottom 0
+}
+100% {
+opacity:0;
+transform:rotate(90deg);
+transform-origin:left bottom 0
+}
+}
+.animated.rotateOutDownLeft {
+	animation-name: rotateOutDownLeft
+}
+@keyframes rotateOutUpRight {
+0% {
+opacity:1;
+transform:rotate(0);
+transform-origin:right bottom 0
+}
+100% {
+opacity:0;
+transform:rotate(90deg);
+transform-origin:right bottom 0
+}
+}
+.animated.rotateOutUpRight {
+	animation-name: rotateOutUpRight
+}
+@keyframes rotateOutDownRight {
+0% {
+opacity:1;
+transform:rotate(0);
+transform-origin:right bottom 0
+}
+100% {
+opacity:0;
+transform:rotate(-90deg);
+transform-origin:right bottom 0
+}
+}
+.animated.rotateOutDownRight {
+	animation-name: rotateOutDownRight
+}
+@keyframes hinge {
+0% {
+animation-timing-function:ease-in-out;
+transform:rotate(0);
+transform-origin:left top 0
+}
+20%, 60% {
+animation-timing-function:ease-in-out;
+transform:rotate(80deg);
+transform-origin:left top 0
+}
+40% {
+animation-timing-function:ease-in-out;
+transform:rotate(60deg);
+transform-origin:left top 0
+}
+80% {
+animation-timing-function:ease-in-out;
+opacity:1;
+transform:rotate(60deg) translateY(0);
+transform-origin:left top 0
+}
+100% {
+opacity:0;
+transform:translateY(700px)
+}
+}
+.animated.hinge {
+	animation-duration: 2s;
+	animation-name: hinge
+}
+@keyframes rollIn {
+0% {
+opacity:0;
+transform:translateX(-100%) rotate(-120deg)
+}
+100% {
+opacity:1;
+transform:translateX(0) rotate(0)
+}
+}
+.animated.rollIn {
+	animation-name: rollIn
+}
+@keyframes rollOut {
+0% {
+opacity:1;
+transform:translateX(0) rotate(0)
+}
+100% {
+opacity:0;
+transform:translateX(100%) rotate(120deg)
+}
+}
+.animated.rollOut {
+	animation-name: rollOut
+}
+@keyframes lightSpeedIn {
+0% {
+opacity:0;
+transform:translateX(100%) skewX(-30deg)
+}
+60% {
+opacity:1;
+transform:translateX(-20%) skewX(30deg)
+}
+80% {
+opacity:1;
+transform:translateX(0) skewX(-15deg)
+}
+100% {
+opacity:1;
+transform:translateX(0) skewX(0)
+}
+}
+.animated.lightSpeedIn {
+	animation-duration: .5s;
+	animation-name: lightSpeedIn;
+	animation-timing-function: ease-out
+}
+@keyframes lightSpeedOut {
+0% {
+opacity:1;
+transform:translateX(0) skewX(0)
+}
+100% {
+opacity:0;
+transform:translateX(100%) skewX(-30deg)
+}
+}
+.animated.lightSpeedOut {
+	animation-duration: .25s;
+	animation-name: lightSpeedOut;
+	animation-timing-function: ease-in
+}
+.fade {
+	opacity: 0;
+	transition: opacity .15s linear 0s
+}
+@keyframes spin {
+0% {
+transform:rotate(0)
+}
+100% {
+transform:rotate(359deg)
+}
+}
+
+/*Custom Popup*/
+.cust_popup{position: absolute;top:0;bottom: 0;left: 0;right: 0;background: rgba(0,0,0,0.5);z-index:5;}

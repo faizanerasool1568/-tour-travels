@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	class="loginbg">
+<div th:replace="/layout/head-section/login-head"></div>
+<div th:replace="/layout/fragments/ribbon"></div>
+<body>
+	<div class="pagewrapper container">
+		<div class="logincontent">
+			<br />
+			<!--Container Starts here-->
+			<div class="row loginWrap" layout:fragment="content">
+				<!-- Content Comes here -->
+			</div>
+		</div>
+	</div>
+	<div class="ajax-loader" id="loading">
+		<div class="spinner">
+			<img th:src="@{|/images/common/loading.gif|}" width="48px"
+				height="48px" />
+		</div>
+	</div>
+
+	<div th:replace="~{/layout/body-section/login-script}"></div>
+	<th:block layout:fragment="script">
+
+	</th:block>
+</body>
+</html>

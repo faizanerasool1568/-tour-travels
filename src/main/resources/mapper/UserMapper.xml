@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.project.tour.travels.TourTravels.mapper.UserMapper">
+
+	<select id="getUserDetails"
+		resultType="com.project.tour.travels.TourTravels.dto.CommonDetailVo">
+		SELECT
+		ID as id,
+		PASSWORD as attributeValue5,
+		FULL_NAME as
+		attributeValue6
+		FROM
+		USER_LOGIN_PROFILE
+		WHERE
+		USER_ID = #{userId}
+	</select>
+
+	<select id="getConfigurationValuesByTypeCode"
+		resultType="com.project.tour.travels.TourTravels.dto.DropDownDetailVo">
+		SELECT
+		ID as id,
+		code as code,
+		description as
+		description
+		FROM
+		INF_CONFIGURATION_VALUE
+		WHERE
+		CONFIGURATION_TYPE_ID = (SELECT ID FROM
+		INF_CONFIGURATION_TYPE WHERE CODE=#{code})
+		and ENABLED='Y' order by
+		ORDER_BY;
+	</select>
+	<select id="getServicesByCode"
+		resultType="com.project.tour.travels.TourTravels.dto.DropDownDetailVo">
+		SELECT
+		ID as id,
+		code as code,
+		description as
+		description
+		FROM
+		FND_SERVICE
+		WHERE
+		APPLICABLE_FOR = #{code}
+		and STATUS_ID= (SELECT ID FROM
+		INF_CONFIGURATION_VALUE WHERE CODE='ACTIVE')
+	</select>
+	<select id="getConfigurationTypeByTypeCode"
+		resultType="com.project.tour.travels.TourTravels.dto.DropDownDetailVo">
+		SELECT
+		ID as id,
+		code as code,
+		description as
+		description
+		FROM
+		INF_CONFIGURATION_TYPE
+		WHERE CODE=#{code}
+	</select>
+</mapper>

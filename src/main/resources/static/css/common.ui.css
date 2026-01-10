@@ -1,0 +1,198 @@
+.ele-hide {
+	display: none;
+}
+
+.ele-show {
+	display: inline;
+}
+
+#pwindicator {
+	margin-top: 4px;
+	width: 150px;
+}
+
+.bar {
+	height: 2px;
+}
+
+.pw-very-weak .bar {
+	background: #d00;
+	width: 30px;
+}
+
+.pw-very-weak .label {
+	color: #d00;
+}
+
+.pw-weak .bar {
+	background: #d00;
+	width: 60px;
+}
+
+.pw-weak .label {
+	color: #d00;
+}
+
+.pw-mediocre .bar {
+	background: #f3f01a;
+	width: 90px;
+}
+
+.pw-mediocre .label {
+	color: #f3f01a;
+}
+
+.pw-strong .bar {
+	background: #f3b31a;
+	width: 120px;
+}
+
+.pw-strong .label {
+	color: #f3b31a;
+}
+
+.pw-very-strong .bar {
+	background: #0d0;
+	width: 150px;
+}
+
+.pw-very-strong .label {
+	color: #0d0;
+}
+
+@media screen {
+	#printSection {
+		display: none;
+	}
+}
+
+@media print {
+	body * {
+		visibility: hidden;
+	}
+	#printSection, #printSection * {
+		visibility: visible;
+	}
+	#printSection {
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+	#productRate {
+		width: 210mm;
+		font-size: 8pt;
+	}
+	.close {
+		display: none;
+	}
+	.modal-footer {
+		display: none;
+	}
+}
+
+#divPreLogin .help-block {
+	background: #ffecef;
+	padding: 2px 5px;
+	margin-top: 0px;
+	border: 1px solid #a94442;
+	border-top-style: solid;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	font-size: 13px;
+}
+
+.modal-smm {
+	width: 550px;
+	margin: auto;
+}
+
+.appInfo {
+	color: #fff;
+	margin: auto;
+}
+
+.ips-bank-logo {
+	width: 161px;
+	height: 34px;
+}
+
+.ips-sarie-logo {
+	width: 119px;
+	height: 78px;
+}
+
+.esal-btn-group {
+	display: flex;
+}
+
+.esal-btn-group .transfer-mode {
+	border-radius: 0px;
+}
+
+.m0 {
+	margin: 0;
+}
+
+.rtl {
+	direction: rtl;
+}
+
+.m5 {
+	margin-left: 5px;
+}
+.line-height-25{
+    line-height:25px;
+}
+.underline{
+    text-decoration:underline;
+}
+
+
+.disable-div {
+    pointer-events: none;
+}
+
+textarea {
+  resize: none;
+}
+
+.token_en {
+    float: left;
+}
+
+.token_ar {
+    float: right;
+}
+
+.passCodeInput {
+    width: 50%
+}
+.nocursor{
+	cursor: default !important;
+}
+.isDisabled {
+  color: currentColor;
+  cursor: not-allowed;
+  opacity: 0.5;
+  text-decoration: none;
+  pointer-events: none;
+}
+
+.table_header_color {
+	color: #30395c;
+}
+.table_data_anchor {
+	color: #337ab7;
+	text-decoration:underline;
+}
+.ws-success input.confirmBeneficiary {
+    border-color: #3c763d;
+}
+.popover {
+            width: 250px;
+            /* Max Width of the popover (depending on the container!) */
+        }
+.amt-yellow
+{
+	color:#ffbb33
+}

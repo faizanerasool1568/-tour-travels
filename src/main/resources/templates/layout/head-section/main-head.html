@@ -1,0 +1,28 @@
+<head th:fragment="head">
+<title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">Tour
+	and Travels</title>
+<div th:replace="/layout/head-section/meta-tags"></div>
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+<link rel="stylesheet" th:href="@{/css/font-awesome.min.css}" />
+<link rel="stylesheet" th:href="@{/css/LeftMenuLayout/layout_frame.css}" />
+<link rel="stylesheet" th:href="@{/css/LeftMenuLayout/layout_styles.css}" />
+<link rel="stylesheet" th:href="@{/css/toastr.min.css}" />
+<link rel="stylesheet" th:href="@{/css/jquery-confirm.min.css}" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+<script th:src="@{/js/pollyfill_v1/js-webshim/minified/polyfiller.js}"></script>
+<script th:src="@{/js/library/jquery.min.js}"></script>
+<script th:src="@{/js/library/jquery-confirm.min.js}"></script>
+<script th:src="@{/js/library/bootstrap.min.js}"></script>
+<script th:src="@{/js/library/jquery.canvasjs.min.js}"></script>
+<script th:src="@{/js/library/chosen.jquery.min.js}"></script>
+<script th:src="@{/js/library/progressbar.min.js}"></script>
+<script th:src="@{/js/library/jquery.sparkline.min.js}"></script>
+<script th:src="@{/js/library/moment.min.js}"></script>
+<script th:src="@{/js/library/fullcalendar.min.js}"></script>
+<script th:src="@{/js/library/jsencrypt-js/jsencrypt.min.js}"></script>
+<script th:src="@{/js/library/toastr.min.js}"></script>
+
+<script th:src="@{/js/common/app-util.js}"></script>
+<script th:src="@{/js/common/app.js}"></script>
+</head>

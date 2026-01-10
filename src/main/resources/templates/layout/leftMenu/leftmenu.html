@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<body>
+	<aside class="leftnav" th:fragment="leftmenu">
+		<nav class="multilist">
+			<div class="glossymenu leftMenu">
+				<a class="menuitem active" id="dateline" href="javascript:void(0);"
+					onclick="postToCanvas('dateline');" target="icanvas">Dashboard</a>
+			</div>
+		</nav>
+		
+		<nav class="multilist">
+			<div class="glossymenu leftMenu">
+				<a class="menuitem" id="createAdminProfile" href="javascript:void(0);"
+					onclick="postToCanvas('/admin/start');" target="icanvas">Create Admin Profile</a>
+			</div>
+		</nav>
+		
+		<nav class="multilist">
+			<div class="glossymenu leftMenu">
+				<a class="menuitem" id="createCustomerProfile" href="javascript:void(0);"
+					onclick="postToCanvas('/customer/start');" target="icanvas">Create Customer Profile</a>
+			</div>
+		</nav>
+		
+		
+	</aside>
+</body>
+</html>

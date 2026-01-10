@@ -1,0 +1,14 @@
+<script th:src="@{/js/library/jquery.min.js}"></script>
+<script th:src="@{/js/library/jquery-migrate-3.3.2.min.js}"></script>
+<script th:src="@{/js/library/bootstrap.min.js}"></script>
+<script type="text/javascript">
+if (window.parent && window.parent.hideSpinner) {
+    window.parent.hideSpinner();
+}
+    $(document).ready(function() {
+    	if($("#breakOutOfFrame").length){
+        	breakout_of_frame();
+        }
+    });
+    
+</script>

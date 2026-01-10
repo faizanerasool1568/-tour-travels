@@ -1,0 +1,17 @@
+<header class="appheader" th:fragment="header">
+	<a class="btn btn-default btn-sm pull-left hidden-md hidden-lg shownav"><i
+		aria-hidden="true" class="fa fa-bars"></i> </a>
+	<h1 class="pull-left">
+		<span>Tour and Travels</span>
+	</h1>
+	<div class="header_cntrl pull-right">
+		<div class="user_nme pull-right hidden-xs">
+			<span sec:authentication="principal.fullname">Simon Powell</span>
+		</div>
+<!-- 		<form th:action="@{/logout}" method="post"> -->
+<!-- 							<button type="submit" class="list-group-item list-logout"> -->
+<!-- 								<i class="fa fa-sign-out fa-lg"></i> Logout -->
+<!-- 							</button> -->
+<!-- 						</form> -->
+	</div>
+</header>

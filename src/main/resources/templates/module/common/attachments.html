@@ -1,0 +1,169 @@
+<div
+	th:fragment="attachments(showAadhar, showPan,showDL,showBill,showGhumasta,showAdvPayRecp,showFullPayRecp,showOther,showTransferCopy)">
+	<div class="row">
+		<div th:if="${showAadhar}">
+			<div class="form-group col-sm-6">
+				<label><span>Upload Aadhar Card</span></label> <br /> <input
+					type="hidden" th:field="${dto.aadharFileName}"> <span
+					class="btn btn-success fileinput-button"> <i
+					class="glyphicon glyphicon-file"></i> <span>Attach Aadhar
+						Card</span><input type="file" th:field="${dto.aadharUploadFile}"
+					id="uploadAadharFile" class="form-control" placeholder="Upload..."
+					onclick="this.value=null;"></input>
+				</span> <span> </span> <span class="btn btn-info downloadDoc"
+					th:if="${dto.aadharFileName}"
+					th:attr="data-id=${dto.aadharDocumentId}"> <i
+					class="glyphicon glyphicon-download-alt"></i> <span>Download</span>
+				</span> <br /> <span id="aadharSuccess" th:text="${dto.aadharFileName}"></span>
+				<br /> <span id="aadharfail" style="display: none; color: red;"></span>
+				<br /> <span th:unless="${dto.aadharFileName}" class="text-primary"></span>
+			</div>
+		</div>
+		<div th:if="${showPan}">
+			<div class="form-group col-sm-6">
+				<label><span>Upload Pan Card</span></label><br /> <input
+					type="hidden" th:field="${dto.panFileName}"> <span
+					class="btn btn-success fileinput-button"> <i
+					class="glyphicon glyphicon-file"></i> <span>Attach Pan Card</span><input
+					type="file" th:field="${dto.panUploadFile}" id="uploadPanFile"
+					class="form-control" placeholder="Upload..."
+					onclick="this.value=null;"></input>
+				</span><span> </span> <span class="btn btn-info downloadDoc"
+					th:if="${dto.panFileName}" th:attr="data-id=${dto.panDocumentId}">
+					<i class="glyphicon glyphicon-download-alt"></i> <span>Download</span>
+				</span> <br /> <span id="panSuccess" th:text="${dto.panFileName}"></span>
+				<br /> <span id="panfail" style="display: none; color: red;"></span>
+				<br /> <span th:unless="${dto.panFileName}" class="text-primary"></span>
+			</div>
+		</div>
+		<div th:if="${showDL}">
+			<div class="form-group col-sm-6">
+				<label><span>Upload Driving License</span></label><br /> <input
+					type="hidden" th:field="${dto.dlFileName}"> <span
+					class="btn btn-success fileinput-button"> <i
+					class="glyphicon glyphicon-file"></i> <span>Attach Driving
+						License</span><input type="file" th:field="${dto.dlUploadFile}"
+					id="uploadDlFile" class="form-control" placeholder="Upload..."
+					onclick="this.value=null;"></input>
+				</span> <span> </span> <span class="btn btn-info downloadDoc"
+					th:if="${dto.dlFileName}" th:attr="data-id=${dto.dlDocumentId}">
+					<i class="glyphicon glyphicon-download-alt"></i> <span>Download</span>
+				</span> <br /> <span id="dlSuccess" th:text="${dto.dlFileName}"></span> <br />
+				<span id="dlfail" style="display: none; color: red;"></span> <br />
+				<span th:unless="${dto.dlFileName}" class="text-primary"></span>
+			</div>
+		</div>
+		<div th:if="${showBill}">
+			<div class="form-group col-sm-6">
+				<label><span>Upload Electric Bill</span></label><br /> <input
+					type="hidden" th:field="${dto.billFileName}"> <span
+					class="btn btn-success fileinput-button"> <i
+					class="glyphicon glyphicon-file"></i> <span>Attach Electric
+						Bill</span><input type="file" th:field="${dto.billUploadFile}"
+					id="uploadbillFile" class="form-control" placeholder="Upload..."
+					onclick="this.value=null;"></input>
+				</span> <span> </span> <span class="btn btn-info downloadDoc"
+					th:if="${dto.billFileName}" th:attr="data-id=${dto.billDocumentId}">
+					<i class="glyphicon glyphicon-download-alt"></i> <span>Download</span>
+				</span> <br /> <span id="billSuccess" th:text="${dto.billFileName}"></span>
+				<br /> <span id="billfail" style="display: none; color: red;"></span>
+				<br /> <span th:unless="${dto.billFileName}" class="text-primary"></span>
+			</div>
+		</div>
+		<div th:if="${showGhumasta}">
+			<div class="form-group col-sm-6">
+				<label><span>Upload Ghumasta</span></label><br /> <input
+					type="hidden" th:field="${dto.ghumastaFileName}"><span
+					class="btn btn-success fileinput-button"> <i
+					class="glyphicon glyphicon-file"></i> <span>Attach Ghumasta
+				</span><input type="file" th:field="${dto.ghumastaUploadFile}"
+					id="uploadghumastaFile" class="form-control"
+					placeholder="Upload..." onclick="this.value=null;"></input>
+				</span> <span> </span><span class="btn btn-info downloadDoc"
+					th:if="${dto.ghumastaFileName}"
+					th:attr="data-id=${dto.ghumastaDocumentId}"> <i
+					class="glyphicon glyphicon-download-alt"></i> <span>Download</span>
+				</span> <br /> <span id="ghumastaSuccess"
+					th:text="${dto.ghumastaFileName}"></span> <br /> <span
+					id="ghumastafail" style="display: none; color: red;"></span> <br />
+				<span th:unless="${dto.ghumastaFileName}" class="text-primary"></span>
+			</div>
+		</div>
+		<div th:if="${showAdvPayRecp}">
+			<div class="form-group col-sm-6">
+				<label><span>Upload Advance Pay Receipt</span></label><br /> <input
+					type="hidden" th:field="${dto.advPayRecpFileName}"> <span
+					class="btn btn-success fileinput-button"> <i
+					class="glyphicon glyphicon-file"></i> <span>Attach Advance
+						Pay Receipt </span><input type="file"
+					th:field="${dto.advPayRecpUploadFile}" id="uploadAdvPayRecpFile"
+					class="form-control" placeholder="Upload..."
+					onclick="this.value=null;"></input>
+				</span><span> </span> <span class="btn btn-info downloadDoc"
+					th:if="${dto.advPayRecpFileName}"
+					th:attr="data-id=${dto.advPayRecpDocumentId}"> <i
+					class="glyphicon glyphicon-download-alt"></i> <span>Download</span>
+				</span> <br /> <span id="advPayRecpSuccess"
+					th:text="${dto.advPayRecpFileName}"></span> <br /> <span
+					id="advPayRecpfail" style="display: none; color: red;"></span> <br />
+				<span th:unless="${dto.advPayRecpFileName}" class="text-primary"></span>
+			</div>
+		</div>
+		<div th:if=${showFullPayRecp}>
+			<div class="form-group col-sm-6">
+				<label><span>Upload Full Pay Receipt</span></label><br /> <input
+					type="hidden" th:field="${dto.fullPayRecpFileName}"> <span
+					class="btn btn-success fileinput-button"> <i
+					class="glyphicon glyphicon-file"></i> <span>Attach Full Pay
+						Receipt </span><input type="file" th:field="${dto.fullPayRecpUploadFile}"
+					id="uploadfullPayRecpFile" class="form-control"
+					placeholder="Upload..." onclick="this.value=null;"></input>
+				</span> <span> </span> <span class="btn btn-info downloadDoc"
+					th:if="${dto.fullPayRecpFileName}"
+					th:attr="data-id=${dto.fullPayRecpDocumentId}"> <i
+					class="glyphicon glyphicon-download-alt"></i> <span>Download</span>
+				</span> <br /> <span id="fullPayRecpSuccess"
+					th:text="${dto.fullPayRecpFileName}"></span> <br /> <span
+					id="fullPayRecpfail" style="display: none; color: red;"></span> <br />
+				<span th:unless="${dto.fullPayRecpFileName}" class="text-primary"></span>
+			</div>
+		</div>
+		<div th:if="${showOther}">
+			<div class="form-group col-sm-6">
+				<label><span>Upload Other Documents</span></label><br /> <input
+					type="hidden" th:field="${dto.otherFileName}"> <span
+					class="btn btn-success fileinput-button"> <i
+					class="glyphicon glyphicon-file"></i> <span>Attach Other
+						Documents </span><input type="file" th:field="${dto.otherUploadFile}"
+					id="uploadOtherFile" class="form-control" placeholder="Upload..."
+					onclick="this.value=null;"></input>
+				</span> <span> </span><span class="btn btn-info downloadDoc"
+					th:if="${dto.otherFileName}"
+					th:attr="data-id=${dto.otherDocumentId}"> <i
+					class="glyphicon glyphicon-download-alt"></i> <span>Download</span>
+				</span> <br /> <span id="otherSuccess" th:text="${dto.otherFileName}"></span>
+				<br /> <span id="otherfail" style="display: none; color: red;"></span>
+				<br /> <span th:unless="${dto.otherFileName}" class="text-primary"></span>
+			</div>
+		</div>
+		<div th:if="${showTransferCopy}">
+			<div class="form-group col-sm-6">
+				<label><span>Upload Transfer Copy</span></label><br /> <input
+					type="hidden" th:field="${dto.transferCopyFileName}"> <span
+					class="btn btn-success fileinput-button"> <i
+					class="glyphicon glyphicon-file"></i> <span>Attach Transfer
+						Copy </span><input type="file" th:field="${dto.transferCopyFileName}"
+					id="uploadTransferCopy" class="form-control"
+					placeholder="Upload..." onclick="this.value=null;"></input>
+				</span> <span> </span><span class="btn btn-info downloadDoc"
+					th:if="${dto.transferCopyFileName}"
+					th:attr="data-id=${dto.transferCopyDocumentId}"> <i
+					class="glyphicon glyphicon-download-alt"></i> <span>Download</span>
+				</span> <br /> <span id="transferCopySuccess"
+					th:text="${dto.transferCopyFileName}"></span> <br /> <span
+					id="transferCopyfail" style="display: none; color: red;"></span> <br />
+				<span th:unless="${dto.otherFileName}" class="text-primary"></span>
+			</div>
+		</div>
+	</div>
+</div>

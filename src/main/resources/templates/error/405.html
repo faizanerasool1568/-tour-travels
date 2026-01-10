@@ -1,0 +1,14 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="/layout/error-inline-layout">
+<section layout:fragment="content">
+	<form th:action="@{/login}" method="get">
+		<div class="container">
+			<div class="row">
+				<div class="alert alert-warning" role="alert">(405)
+					Method Not Allowed</div>
+			</div>
+		</div>
+	</form>
+</section>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<div th:replace="/layout/head-section/main-head"></div>
+<body>
+	<!--App Wrapper Starts Here-->
+	<div class="appwrapper" id="appwrapper">
+		<form th:action="@{/main}" method="post" name="formMenu" id="formMenu">
+
+		</form>
+		<div th:replace="~{/layout/fragments/header :: header}">This is
+			the header content</div>
+
+
+
+		<div th:replace="~{/layout/fragments/body :: body}">
+			<h1>Hi Static content for prototyping purposes only</h1>
+		</div>
+
+		<div class="ajax-loader" id="loading">
+			<div class="spinner">
+				<img th:src="@{|/images/common/loading.gif|}" width="48px"
+					height="48px" onerror="this.style.display='none'" />
+			</div>
+		</div>
+		<div th:replace="~{/layout/fragments/footer :: footer}">&copy;
+			2018</div>
+	</div>
+
+	<!-- 	<div th:replace="~{/layouts/body-section/main-script}"></div> -->
+	<!--App Wrapper Ends Here-->
+
+	<th:block layout:fragment="script">
+
+	</th:block>
+</body>
+</html>

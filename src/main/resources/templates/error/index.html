@@ -1,0 +1,28 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="/layouts/layout-1/error">
+<section layout:fragment="content">
+	<form th:action="@{/login}" method="get">
+	<div class="error_container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+				<div class="error_icon error_500">
+
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-9 col-lg-9 ">
+				<div class="error_content">
+					<h1>OOPS!!</h1>
+					<h2> Internal Error</h2>
+					<p> We are unable to serve you now!
+						Pls check back again in some time!</p>
+					<p>
+						<input type="submit" class="btn btn-primary" value="Re-Login"/>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	</form>
+</section>
+</html>
