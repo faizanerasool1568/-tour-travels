@@ -20,6 +20,12 @@ public class CodeAndDescriptionDTO {
 		this.description = description;
 	}
 
+	public CodeAndDescriptionDTO(Long id, String code) {
+		super();
+		this.id = id;
+		this.code = code;
+	}
+
 	public CodeAndDescriptionDTO(Long id) {
 		super();
 		this.id = id;
