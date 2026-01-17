@@ -145,22 +145,22 @@ public class SecurityConfiguration {
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
 		http.headers().frameOptions().disable().and()
-				.authorizeHttpRequests(request -> request.antMatchers("/prelogin/**").permitAll().antMatchers("/css/**")
-						.permitAll().antMatchers("/scripts/**").permitAll().antMatchers("/images/**").permitAll()
-						.antMatchers("/js/**").permitAll().antMatchers("/fonts/**").permitAll()
-						.antMatchers("/prelogin/validateLogin").permitAll().antMatchers("/favicon.ico/**").permitAll()
-						.anyRequest().authenticated())
+				.authorizeHttpRequests(request -> request.antMatchers("/prelogin/**").permitAll()
+						.antMatchers("/actuator/health", "/actuator/info").permitAll().antMatchers("/actuator/**")
+						.permitAll().antMatchers("/css/**").permitAll().antMatchers("/scripts/**").permitAll()
+						.antMatchers("/images/**").permitAll().antMatchers("/js/**").permitAll()
+						.antMatchers("/fonts/**").permitAll().antMatchers("/prelogin/validateLogin").permitAll()
+						.antMatchers("/favicon.ico/**").permitAll().anyRequest().authenticated())
 				.formLogin().loginPage("/prelogin/home").usernameParameter("userLogin").passwordParameter("password")
 				.loginProcessingUrl("/prelogin/validateLogin")
 				// .authenticationDetailsSource(new MyExtraAuthenticationDetailsSource())
-				//.defaultSuccessUrl("/login/home", true)
-				.defaultSuccessUrl("/login/home", true)
-				.successHandler(myAuthenticationSuccessHandler)
-				//.failureHandler(authenticationFailureHandler)
+				// .defaultSuccessUrl("/login/home", true)
+				.defaultSuccessUrl("/login/home", true).successHandler(myAuthenticationSuccessHandler)
+				// .failureHandler(authenticationFailureHandler)
 
-				//.and().logout().logoutUrl("/logout").addLogoutHandler(myLogoutHandler)
-				//.logoutSuccessHandler(myLogoutSuccessHandler).invalidateHttpSession(true)
-				
+				// .and().logout().logoutUrl("/logout").addLogoutHandler(myLogoutHandler)
+				// .logoutSuccessHandler(myLogoutSuccessHandler).invalidateHttpSession(true)
+
 				.and().csrf().disable();
 		// .csrfTokenRepository(new CustomCsrfTokenRepository());
 		// .logout(LogoutConfigurer::permitAll);
