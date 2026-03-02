@@ -2,19 +2,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-<div th:replace="/layout/head-section/main-head"></div>
+<div th:replace="layout/head-section/main-head"></div>
 <body>
 	<!--App Wrapper Starts Here-->
 	<div class="appwrapper" id="appwrapper">
 		<form th:action="@{/main}" method="post" name="formMenu" id="formMenu">
 
 		</form>
-		<div th:replace="~{/layout/fragments/header :: header}">This is
+		<div th:replace="~{layout/fragments/header :: header}">This is
 			the header content</div>
 
 
 
-		<div th:replace="~{/layout/fragments/body :: body}">
+		<div th:replace="~{layout/fragments/body :: body}">
 			<h1>Hi Static content for prototyping purposes only</h1>
 		</div>
 
@@ -24,7 +24,7 @@
 					height="48px" onerror="this.style.display='none'" />
 			</div>
 		</div>
-		<div th:replace="~{/layout/fragments/footer :: footer}">&copy;
+		<div th:replace="~{layout/fragments/footer :: footer}">&copy;
 			2018</div>
 	</div>
 
