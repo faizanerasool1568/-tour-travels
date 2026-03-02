@@ -1,13 +1,13 @@
 # -------- Build stage --------
-FROM adoptopenjdk:8-jdk-hotspot AS build
+FROM maven:3.8.8-jdk-8 AS build
 
 WORKDIR /app
 
-# Copy all project files into Docker
+# Copy all project files
 COPY . .
 
 # Build the Spring Boot JAR
-RUN ./mvnw clean package -DskipTests
+RUN mvn clean package -DskipTests
 
 # -------- Run stage --------
 FROM adoptopenjdk:8-jre-hotspot
